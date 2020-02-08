@@ -38,7 +38,7 @@ public class WalletRepositoryTest {
 		w.setName(NAME);
 		w.setValue(new BigDecimal(1));
 
-		repository.save(w);
+		wallet = repository.save(w);
 	}
 
 	@After
