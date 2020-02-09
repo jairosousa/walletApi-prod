@@ -1,11 +1,6 @@
 dist: trusty
 language: java
-sudo: false
-script:
-  - mvn test
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 jdk:
   - oraclejdk8
 before_install:
-  - chmod +x mvnw
   - export TZ=Brazil/East
