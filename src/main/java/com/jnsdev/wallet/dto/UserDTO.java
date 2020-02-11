@@ -28,6 +28,6 @@ public class UserDTO {
 	private String email;
 
 	@NotNull(message = "Informe uma role de acesso")
-	@Pattern(regexp="^(ROLE_ADMIN|ROLE_USER)$", message = "Para a role de acesso somente são aceitos os valores ROLE_ADMIN ou ROLE_USER")
+	@Pattern(regexp="^(ROLE_ADMIN|ROLE_git commitUSER)$", message = "Para a role de acesso somente são aceitos os valores ROLE_ADMIN ou ROLE_USER")
 	private String role;
 }
