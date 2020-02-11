@@ -57,7 +57,7 @@ public class UserControllerTest {
 		mvc.perform(MockMvcRequestBuilders.post(URL).content(getJsonPayload(ID, NAME, EMAIL, PASSWORD))
 				.contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isCreated()).andExpect(jsonPath("$.data.id").value(ID))
-				.andExpect(jsonPath("$.data.email").value("FAIL TESTE")).andExpect(jsonPath("$.data.name").value(NAME))
+				.andExpect(jsonPath("$.data.email").value(EMAIL)).andExpect(jsonPath("$.data.name").value(NAME))
 				.andExpect(jsonPath("$.data.password").doesNotExist());
 	}
 

@@ -10,3 +10,11 @@
 # 3 - Faça alterações no projeto
 
 # 4 - commit para nova branch
+> git push origin travis-test
+
+# 5 - No repositorio remoto acesse a nova branch e click em new pull-request
+
+# 6 - escreva uma descrição da alteração e click em create pull request
+ --verifique os teste falhou
+
+# 7 - corrija a falha se quiser faça masi alterações novas aplicação e depois commit novamente
