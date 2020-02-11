@@ -3,6 +3,7 @@ package com.jnsdev.wallet.controller;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import com.jnsdev.wallet.util.enums.RoleEnum;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.BDDMockito;
@@ -56,8 +57,11 @@ public class UserControllerTest {
 
 		mvc.perform(MockMvcRequestBuilders.post(URL).content(getJsonPayload(ID, NAME, EMAIL, PASSWORD))
 				.contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isCreated()).andExpect(jsonPath("$.data.id").value(ID))
-				.andExpect(jsonPath("$.data.email").value(EMAIL)).andExpect(jsonPath("$.data.name").value(NAME))
+				.andExpect(status().isCreated())
+				.andExpect(jsonPath("$.data.id").value(ID))
+				.andExpect(jsonPath("$.data.email").value(EMAIL))
+				.andExpect(jsonPath("$.data.name").value(NAME))
+				.andExpect(jsonPath("$.data.role").value(RoleEnum.ROLE_ADMIN.toString()))
 				.andExpect(jsonPath("$.data.password").doesNotExist());
 	}
 
@@ -77,7 +81,7 @@ public class UserControllerTest {
 		u.setEmail(EMAIL);
 		u.setName(NAME);
 		u.setPassword(PASSWORD);
-
+		u.setRole(RoleEnum.ROLE_ADMIN);
 		return u;
 	}
 
@@ -87,6 +91,7 @@ public class UserControllerTest {
 		dto.setEmail(email);
 		dto.setName(name);
 		dto.setPassword(password);
+		dto.setRole(RoleEnum.ROLE_ADMIN.toString());
 
 		ObjectMapper mapper = new ObjectMapper();
 

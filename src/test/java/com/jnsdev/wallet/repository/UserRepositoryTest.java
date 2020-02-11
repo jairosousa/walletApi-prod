@@ -6,6 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Optional;
 
+import com.jnsdev.wallet.util.enums.RoleEnum;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,6 +34,7 @@ public class UserRepositoryTest {
 		u.setName("Set up user");
 		u.setPassword("senha123");
 		u.setEmail(EMAIL);
+		u.setRole(RoleEnum.ROLE_ADMIN);
 
 		repository.save(u);
 	}
@@ -48,6 +50,7 @@ public class UserRepositoryTest {
 		u.setName("Teste");
 		u.setPassword("123456");
 		u.setEmail("teste@teste.com");
+		u.setRole(RoleEnum.ROLE_ADMIN);
 
 		User response = repository.save(u);
 

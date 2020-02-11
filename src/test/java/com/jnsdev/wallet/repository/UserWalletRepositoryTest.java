@@ -8,6 +8,7 @@ import static org.junit.Assert.assertThat;
 import java.math.BigDecimal;
 import java.util.Optional;
 
+import com.jnsdev.wallet.util.enums.RoleEnum;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
@@ -47,6 +48,7 @@ public class UserWalletRepositoryTest {
 		u.setName("Set up user 2");
 		u.setPassword("senha123");
 		u.setEmail("email2@teste.com");
+		u.setRole(RoleEnum.ROLE_ADMIN);
 		u = uRepository.save(u);
 
 		Wallet w = new Wallet();
@@ -76,6 +78,7 @@ public class UserWalletRepositoryTest {
 		u.setName("Set up user");
 		u.setPassword("senha123");
 		u.setEmail("email@teste.com");
+		u.setRole(RoleEnum.ROLE_ADMIN);
 
 		uRepository.save(u);
 		
