@@ -1,0 +1,12 @@
+# Pull request
+
+# 1 - Criar nova branch no repositorio a partir da master
+
+> git push origin master:travis-test
+
+# 2 - Mudar para nova branch
+> git checkout travis-test
+
+# 3 - Faça alterações no projeto
+
+# 4 - commit para nova branch
