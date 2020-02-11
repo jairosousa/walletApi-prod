@@ -35,7 +35,7 @@ public class User implements Serializable{
 	
 	private String email;
 	
-//	@NotNull
-//	@Enumerated(EnumType.STRING)
-//	private RoleEnum role;
+	@NotNull
+	@Enumerated(EnumType.STRING)
+	private RoleEnum role;
 }
